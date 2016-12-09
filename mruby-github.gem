@@ -1,0 +1,6 @@
+name: mruby-github
+description: Example class
+author: linyows
+website: https://github.com/linyows/mruby-github
+protocol: git
+repository: https://github.com/linyows/mruby-github.git
