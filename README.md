@@ -1,6 +1,14 @@
-# mruby-github   [![Build Status](https://travis-ci.org/linyows/mruby-github.svg?branch=master)](https://travis-ci.org/linyows/mruby-github)
-Example class
-## install by mrbgems
+mruby-github
+============
+
+The Github API Client for mruby.
+
+[![Build Status](https://travis-ci.org/linyows/mruby-github.svg?branch=master)][travis]
+[travis]: http://travis-ci.org/linyows/mruby-github
+
+Mrbgems Installation
+--------------------
+
 - add conf.gem line to `build_config.rb`
 
 ```ruby
@@ -11,17 +19,22 @@ MRuby::Build.new do |conf|
     conf.gem :github => 'linyows/mruby-github'
 end
 ```
-## example
+
+Example
+-------
+
 ```ruby
-p Example.hi
-#=> "hi!!"
-t = Example.new "hello"
-p t.hello
-#=> "hello"
-p t.bye
-#=> "hello bye"
+client = Github::Client.new
+client.org_teams('github')
 ```
 
-## License
-under the MIT License:
-- see LICENSE file
+Authors
+-------
+
+- [linyows][linyows]
+[linyows]: https://github.com/linyows
+
+License
+-------
+
+The MIT License (MIT)
