@@ -1,7 +1,9 @@
 class Github
   class Client
     DEFAULT_API_ENDPOINT = 'https://api.github.com'
-    attr_accessor :token
+
+    attr_writer :token
+    attr_accessor :api_endpoint
 
     def initialize(endpoint = nil)
       @http = HttpRequest.new
@@ -11,8 +13,12 @@ class Github
     def default_headers
       {
         'User-Agent' => 'mruby github client',
-        'Authorization' => "token #{@token}"
+        'Authorization' => "token #{token}"
       }
+    end
+
+    def token
+      @token ||= ENV['GITHUB_TOKEN']
     end
 
     def basic_authenticated?(user, password)
