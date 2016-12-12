@@ -24,8 +24,11 @@ Example
 -------
 
 ```ruby
-client = Github::Client.new
-client.org_teams('github')
+> client = Github::Client.new
+> teams = client.org_teams('foo-org')
+> team = teams.find { |t| t['name'] == 'bar-team' }
+> client.team_member?(team['id'], 'baz-user')
+ => true
 ```
 
 Authors
