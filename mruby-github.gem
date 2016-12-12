@@ -1,5 +1,5 @@
 name: mruby-github
-description: Example class
+description: Github Client
 author: linyows
 website: https://github.com/linyows/mruby-github
 protocol: git
